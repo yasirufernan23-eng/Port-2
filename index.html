@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Yasiru Randima Sankalpa</title>
+  <style>
+    /* ========== 8-BIT / PIXEL THEME – BALANCED READABILITY ========== */
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      image-rendering: crisp-edges;
+      image-rendering: pixelated;
+    }
+
+    /* BASE DARK MODE (default) */
+    body {
+      background: #0b0e17;
+      font-family: 'Press Start 2P', monospace;
+      color: #d0ffd0;
+      line-height: 1.5;
+      font-size: 15px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    /* scanlines overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(0deg, rgba(0, 255, 0, 0.03) 0px, rgba(0, 255, 0, 0.03) 2px, transparent 2px, transparent 6px);
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.8rem;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      background: #0f1322;
+      border-bottom: 3px solid #0aff9d;
+      padding: 0.8rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .logo {
+      font-size: 0.9rem;
+      color: #ffcc44;
+      text-shadow: 2px 2px 0 #1a5f7a;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #aaffdd;
+      text-decoration: none;
+      font-size: 0.6rem;
+      transition: 0.1s;
+    }
+    .nav-links a:hover {
+      color: #0aff9d;
+      text-shadow: 0 0 3px #0aff9d;
+    }
+    .mobile-menu {
+      display: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    /* THEME TOGGLE BUTTON */
+    .theme-toggle {
+      background: #0f1322;
+      border: 1px solid #0aff9d;
+      color: #0aff9d;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 1rem;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      box-shadow: 2px 2px 0 #0a5f4a;
+      transition: 0.1s linear;
+      line-height: 1;
+    }
+    .theme-toggle:active {
+      transform: translate(2px, 2px);
+      box-shadow: 0px 0px 0 #0a5f4a;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      margin: 2.5rem 0 3rem;
+      background: #111625;
+      border: 2px solid #0aff9d;
+      padding: 1.5rem;
+      box-shadow: 6px 6px 0 #0a6b4f;
+      transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .hero-text {
+      flex: 2;
+    }
+    .hero-text h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+      color: #ffdd77;
+      text-shadow: 2px 2px 0 #226688;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+    .typing {
+      font-size: 0.7rem;
+      background: #0a0f1a;
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-left: 4px solid #0aff9d;
+      margin: 0.8rem 0;
+      transition: background 0.2s, border-left-color 0.2s;
+    }
+    .hero-text p {
+      font-size: 0.6rem;
+      margin: 0.5rem 0;
+    }
+    .pixel-avatar {
+      width: 220px;
+      height: 220px;
+      border: 3px solid #ffcc44;
+      overflow: hidden;
+      image-rendering: pixelated;
+      transition: border-color 0.2s;
+    }
+    .pixel-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .btn-pixel {
+      display: inline-block;
+      background: #0aff9d;
+      color: #0a0f1e;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      font-size: 0.6rem;
+      box-shadow: 3px 3px 0 #006633;
+      margin-top: 1rem;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+    .btn-pixel:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0 #006633;
+    }
+    .pixel-walker {
+      width: 48px;
+      height: 48px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" fill="%23222"/><rect x="18" y="16" width="12" height="12" fill="%23ffcc44"/><rect x="20" y="28" width="8" height="10" fill="%233366cc"/><circle cx="22" cy="22" r="2" fill="white"/><circle cx="26" cy="22" r="2" fill="white"/></svg>');
+      background-repeat: no-repeat;
+      image-rendering: pixelated;
+      animation: walk 0.3s steps(2) infinite;
+      margin-top: 0.8rem;
+    }
+    @keyframes walk {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(6px); }
+    }
+
+    /* ===== SECTION TITLES ===== */
+    .section-title {
+      font-size: 1rem;
+      border-left: 8px solid #0aff9d;
+      padding-left: 0.8rem;
+      margin: 2rem 0 1.2rem;
+      color: #ffcc66;
+      letter-spacing: 1px;
+      transition: border-left-color 0.2s, color 0.2s;
+    }
+
+    /* ===== CARDS ===== */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background: #12172a;
+      border: 1px solid #2a5f7a;
+      padding: 1rem 1.2rem;
+      transition: 0.1s;
+      box-shadow: 3px 3px 0 #080c14;
+      transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      border-color: #0aff9d;
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0 #0aff9d;
+    }
+    .card h3 {
+      color: #ffcc66;
+      font-size: 0.75rem;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+    .card-sub {
+      font-size: 0.55rem;
+      color: #88ddff;
+      margin-bottom: 0.6rem;
+      transition: color 0.2s;
+    }
+    .card p {
+      font-size: 0.6rem;
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.6rem 0;
+    }
+    .badge {
+      background: #0a1220;
+      border: 1px solid #0aff9d;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.5rem;
+      color: #b0ffb0;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    /* IMAGE SLOT STYLES */
+    .image-slot {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+      align-items: center;
+    }
+    .image-placeholder {
+      background: #0a0f1a;
+      border: 2px dashed #3a8faf;
+      border-radius: 6px;
+      width: 250px;
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.4rem;
+      color: #88ddff;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.1s;
+    }
+    .image-placeholder:hover {
+      border-color: #0aff9d;
+      background: #0f1a2a;
+    }
+    .image-placeholder::before {
+      content: "📷";
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .image-slot img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border: 2px solid #3a8faf;
+      border-radius: 6px;
+    }
+
+    /* skills pills */
+    .skill-group {
+      margin-bottom: 1.3rem;
+    }
+    .skill-group h4 {
+      font-size: 0.7rem;
+      color: #ffcc66;
+      margin-bottom: 0.6rem;
+      transition: color 0.2s;
+    }
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .pill {
+      background: #0f1422;
+      border: 1px solid #2a6f8f;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.55rem;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .pill:hover{
+      background: #0aff9d;
+      color: #0a0f1e;
+      border-color: #0aff9d;
+      transform:translate(-1px,-1px);
+      b0x-shadow:2px 2px 0 #0a6b4f;
+      cursor: pointer;
+    }
+
+    /* timeline (research) */
+    .timeline {
+      border-left: 3px solid #0aff9d;
+      padding-left: 1.2rem;
+      margin: 1rem 0;
+      transition: border-left-color 0.2s;
+    }
+    .tl-item {
+      margin-bottom: 1rem;
+      position: relative;
+      font-size: 0.6rem;
+      line-height: 1.5;
+    }
+    .tl-item::before {
+      content: "◆";
+      position: absolute;
+      left: -1.6rem;
+      color: #ffcc66;
+      font-size: 0.65rem;
+      transition: color 0.2s;
+    }
+
+    /* reflections */
+    .reflection {
+      background: #0f1422;
+      border-left: 5px solid #0aff9d;
+      padding: 0.8rem 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.6rem;
+      line-height: 1.5;
+      transition: background 0.2s, border-left-color 0.2s;
+    }
+
+    /* footer */
+    .footer {
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 2px solid #1f4a5e;
+      margin-top: 2.5rem;
+      font-size: 0.5rem;
+      transition: border-top-color 0.2s, color 0.2s;
+    }
+
+    /* reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(15px);
+      transition: all 0.3s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========== BRIGHT MODE (light theme) OVERRIDES ========== */
+    body.bright-mode {
+      background: #f7f5e8;
+      color: #1f2a2e;
+    }
+    
+    .bright-mode .pill:hover {
+      background: #2c7a4d;
+      color: #ffffff;
+      border-color: #2c7a4d;
+      box-shadow: 2px 2px 0 #9aa76a;
+    }
+
+    body.bright-mode::before {
+      background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.02) 0px, rgba(0, 0, 0, 0.02) 2px, transparent 2px, transparent 6px);
+    }
+    .bright-mode .navbar {
+      background: #e8e5d8;
+      border-bottom-color: #2c7a4d;
+    }
+    .bright-mode .logo {
+      color: #2c6e2c;
+      text-shadow: 1px 1px 0 #c0d0a0;
+    }
+    .bright-mode .nav-links a {
+      color: #2c5a6e;
+    }
+    .bright-mode .nav-links a:hover {
+      color: #1b7a4a;
+      text-shadow: none;
+    }
+    .bright-mode .theme-toggle {
+      background: #e0ddce;
+      border-color: #2c7a4d;
+      color: #2c7a4d;
+      box-shadow: 2px 2px 0 #9aa76a;
+    }
+    .bright-mode .hero {
+      background: #fefcf0;
+      border-color: #2c7a4d;
+      box-shadow: 6px 6px 0 #bfbfa0;
+    }
+    .bright-mode .hero-text h1 {
+      color: #5a3e1b;
+      text-shadow: 2px 2px 0 #c0cfa0;
+    }
+    .bright-mode .typing {
+      background: #ece9db;
+      border-left-color: #2c7a4d;
+      color: #1f3a2e;
+    }
+    .bright-mode .btn-pixel {
+      background: #2c7a4d;
+      color: #ffffff;
+      box-shadow: 3px 3px 0 #1e512e;
+    }
+    .bright-mode .pixel-avatar {
+      border-color: #7a6e3a;
+    }
+    .bright-mode .section-title {
+      color: #5a4a2a;
+      border-left-color: #2c7a4d;
+    }
+    .bright-mode .card {
+      background: #ffffff;
+      border-color: #b0ae90;
+      box-shadow: 3px 3px 0 #d0cca8;
+    }
+    .bright-mode .card:hover {
+      border-color: #2c7a4d;
+      box-shadow: 5px 5px 0 #2c7a4d;
+    }
+    .bright-mode .card h3 {
+      color: #5a6e2a;
+    }
+    .bright-mode .card-sub {
+      color: #3a6e7a;
+    }
+    .bright-mode .badge {
+      background: #f0f0e0;
+      border-color: #2c7a4d;
+      color: #1f4a2c;
+    }
+    .bright-mode .pill {
+      background: #f0ede0;
+      border-color: #9aa77a;
+      color: #2a4d2a;
+    }
+    .bright-mode .skill-group h4 {
+      color: #5a4e2a;
+    }
+    .bright-mode .timeline {
+      border-left-color: #2c7a4d;
+    }
+    .bright-mode .tl-item::before {
+      color: #7a5a2a;
+    }
+    .bright-mode .reflection {
+      background: #fdfaf0;
+      border-left-color: #2c7a4d;
+      color: #2a3a2a;
+    }
+    .bright-mode .footer {
+      border-top-color: #ccc6aa;
+      color: #4a5a4a;
+    }
+    .bright-mode .image-placeholder {
+      background: #efede3;
+      border-color: #b0a87a;
+      color: #4a5a2a;
+    }
+    .bright-mode .image-placeholder:hover {
+      border-color: #2c7a4d;
+      background: #e5e2cf;
+    }
+    .bright-mode .image-slot img {
+      border-color: #b0a87a;
+    }
+    .bright-mode .nav-links.show {
+      background: #e8e5d8;
+    }
+    .bright-mode .mobile-menu {
+      color: #2c5a6e;
+    }
+    .bright-mode .card p,
+    .bright-mode .tl-item {
+      color: #2a3a3a;
+    }
+
+    /* responsiveness */
+    @media (max-width: 760px) {
+      .container {
+        padding: 0.8rem;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #0f1322;
+        padding: 1rem;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .mobile-menu {
+        display: block;
+      }
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .section-title {
+        font-size: 0.9rem;
+      }
+      .card p, .reflection, .tl-item {
+        font-size: 0.55rem;
+      }
+      .image-placeholder {
+        width: 55px;
+        height: 55px;
+      }
+    }
+
+    /* Landscape card: image and text side by side */
+    .card.landscape {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .card.landscape .image-slot {
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .card.landscape .card-text {
+      flex: 2;
+    }
+
+    /* On small screens, stack vertically */
+    @media (max-width: 600px) {
+      .card.landscape {
+        flex-direction: column;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-inner">
+    <div class="logo">◢ See the world through Creative lenses</div><br>
+    <div style="display: flex; gap: 0.8rem; align-items: center;">
+      <button id="themeToggle" class="theme-toggle" aria-label="Switch between dark and bright mode">☀️</button>
+      <div class="mobile-menu" id="mobileBtn">☰</div>
+    </div>
+    <ul class="nav-links" id="navList">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#projects">PROJECTS</a></li>
+      <li><a href="#skills">SKILLS</a></li>
+      <!--<li><a href="#industry">INDUSTRY</a></li>-->
+      <li><a href="#clubs">CLUBS</a></li>
+      <li><a href="#research">RESEARCH</a></li>
+      <li><a href="#certs">CERT</a></li>
+      <li><a href="#achievements">AWARDS</a></li>
+      <li><a href="#reflections">REFLECT</a></li>
+      <li><a href="#goals">GOALS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="container">
+  <!-- HERO SECTION -->
+  <section id="home" class="hero reveal">
+    <div class="hero-text">
+      <h1>Yasiru Randima Sankalpa</h1>
+      <div class="typing" id="typedLine"></div> 
+      <p>CT/2022/054 | Reading BICT(Honours) | Faculty of Computing & Technology | University of Kelaniya</p><br><hr>
+      <p> I'm Yasiru Randima Sankalpa, a 2<sup>nd</sup> year Undergraduate of Unviersity of Kelaniya. I'm passionate about gaming and 2D/3D animations.<br><br>So far I have created some 3D Rigs and simple animations as a beginner animator including the famouse beginner "Donut tutorial" and for an animation I hace designed the bouncing ball in MAYA. And also I do videography and Photography as a pleasure time activity which gives me more freedom,new POVs and it's help me to understand how the compositions, lightinings and colours work inside the digital enviornment.<br><br> My goal is to become a professional game developer and a 3D animator in my industry.In these days I follow some tutorials to get deep understanding about camera movements and lightning for any type of animations. I'm excited to keep learning about what I like most and turning my imaginary into real experiences:)</p><hr>
+      <a href="#contact" class="btn-pixel">► START MISSION</a>
+      <div class="pixel-walker"></div>
+    </div>
+    <div class="pixel-avatar">
+      <img src="1.jpeg" alt="profile pixel">
+    </div>
+  </section>
+
+  <!-- ABOUT ME -->
+  <section id="about" class="reveal">
+    <h2 class="section-title">⚡ ABOUT ME</h2>
+    <div class="card">
+      <p><strong>🎓 Educational Background:<br></strong><p> Currently I'm Reading BICT(Honours) at Faculty of Computing & Technology – University of Kelaniya.<br><br>And I completed G.C.E O/Ls at Royal College, Horana & A/Ls at Taxila Central College, Horana<br>under the Technology Stream Because I was interested in ICT.<br><br> And that time I completed some basic GIT courses conducted by some Private Institutes.</p></p><br>
+      <p><strong>⚙️ Interests:</strong><p>I'm passionate about gaming, 2D/3D animations,video & Photography.
+                                          <br><br>I like watching animated movies and how they create these motions in a virtual enviornment.</p></p><br>
+      <p><strong>🎯 Career Goals:<br></strong><p>As Short term goals I hope to Improve my animate skills, and complete some small animation cartoons and I hope to participate some competitions as well.<br><br>Further more I want to study more about Game Designing and become a proffesional Game Developer and Animator as my Long term Goals.</p></p><br>
+      <p><strong>💎 Values:<br></strong> <p>I Like to turn my imagination into a animations & I enjoy storytelling through my animations.<br><br> I enjoy working with my friends on projects.<br><br>As a interesting point I believe in learning by doing and nerver giving up when something is hard.</p>
+    </div>
+  </section>
+
+  <!-- ========== ACADEMIC PROJECTS (with image slots) ========== -->
+
+  <section id="projects" class="reveal">
+    <h2 class="section-title">🕹️ ACADEMIC PROJECTS</h2>
+    <div class="grid-cards">
+
+      <!-- NOVA card -->
+      <div class="card">
+        <h3>📱 NOVA – Anonymous Mental Health App</h3>
+        <div class="card-sub">Figma, JavaScript</div>
+        <p>As part of the Projects in Technology [I] module at the University of Kelaniya, my teammates and I designed a digital solution addressing:<br><br></p><p style="margin: 0.5rem 0; padding-left: 1rem; border-left: 3px solid #0aff9d;">“<i><b>the lack of accessible and anonymous mental health support in Sri Lanka.</b></i>”</p><br><p>Currently, the main support line — 1926 — is often overloaded, and many young people hesitate to speak openly due to stigma or fear of judgment.</p>
+        <div class="card-sub">
+        <b>Nova was created to fill that gap.</b></p>
+        </div>
+          </p>
+        
+          <p>Nova Features:</p>
+          <ul>
+        <div class="card-sub">
+          <li>Starts with the DASS-21 assessment to help users understand their current mental health status (stress, anxiety, and depression levels).</li><br>
+          <li>Based on results, recommands activities and support tools tailored to the user’s condition.</li><br>
+          <li>Provides an anonymous peer group chat for shared experiences.</li><br>
+          <li>Includes an AI-based chatbot for emotional support, available 24/7.</li><br>
+          <li>Offers guided self-help tools, offline meditation videos, and journaling features.</li><br>
+          <li>Displays real-life success stories to inspire and reduce stigma.</li><br>
+          <li>Includes a prominent emergency support button for immediate help.</li><br>
+        </div>
+          </ul>
+          <p>We used Figma to design a clean and user-friendly interface, focusing on accessibility and comfort for people who may be feeling overwhelmed or anxious.</strong></p><br>
+        <div class="badge-list" style="margin-top: 0.5rem;">
+          <span class="badge" style="background:#a855f7; border-color:#a855f7;">🎭 MY ROLE</span>
+          <span class="badge">Complete Detailed Documentation</span>
+          <span class="badge">Literature review</span>
+        </div>
+        <div class="badge-list" style="margin-top:0.8rem;">
+          <span class="badge" style="background:#ffcc44; color:#0a0f1e;">🛠️ Tools Used</span>
+          <span class="badge">Figma</span>
+          <span class="badge">JavaScript</span>
+          <span class="badge">Canva</span>
+        </div>
+        <div class="image-slot">
+          <img src="10.jpeg" alt="Nova screenshot" style="width:250px; height:130px; object-fit:cover; border-radius:6px;">
+        </div>
+      </div>
+
+      <!-- Line Following Robot card -->
+      <div class="card">
+        <h3>🚗 Transistor‑Based Line Following Robot</h3>
+        <div class="card-sub">Analog Electronics · No Microcontrollers · PCB Design</div>
+        <p>For the Fundamental of electronics Module, we had an analog electronics challenge:</p>
+        <br>
+        <p style="margin: 0.5rem 0; padding-left: 1rem; border-left: 3px solid #0aff9d;"><i>“<b>build a line follower using only transistors, comparators, and passive components – no microcontrollers, no off‑the‑shelf sensor or motor driver modules.</b>”</i></p>
+        <br><p>Unlike typical Arduino‑based designs, this robot relies purely on analog signal processing and discrete logic – a true test of circuit fundamentals.</p><br>
+
+        <p>Specs of the Robot:</p>
+        <div class="card-sub">
+        <ul style="font-size:0.55rem; margin-left:1rem; margin-bottom:0.5rem;">
+          <li>Follows a 2cm black line (straight and curved) on white background.</li><br>
+          <li>Stops and turns on a red LED when an obstacle is detected in front.</li><br>
+          <li>Battery powered (3×AA cells), with a clearly labeled on‑off switch.</li><br>
+          <li>Works reliably under any lighting – no special lighting provided.</li><br>
+          <li>Detachable PCB – overall size 10×10×10 cm, weight 1kg.</li><br>
+          <li>Total component cost under Rs. 5000 for the whole group.</li><br>
+        </ul>
+        </div>
+
+        <p>Outcome:</p>
+        <div class="card-sub">
+        <ul style="font-size:0.55rem; margin-left:1rem; margin-bottom:0.5rem;">
+          <li> The robot successfully completed a test track with 90° turns and S‑curves.</li><br>
+          <li> Obstacle detection worked at 5cm distance.</li><br>
+          <li> Our PCB was evaluated separately and scored high for clean soldering and compact layout.</li><br>
+          <li> The demonstration received positive feedback from the academic coordinator.</li><br>
+        </ul>
+          </div>
+
+        
+        
+        <div class="badge-list" style="margin-top: 0.5rem;">
+          <span class="badge" style="background:#a855f7; border-color:#a855f7;">🔧 MY ROLE</span>
+          <span class="badge">Circuit Assembly</span>
+          <span class="badge">Soldering & Debugging</span>
+        </div>
+        <div class="badge-list" style="margin-top:0.8rem;">
+          <span class="badge" style="background:#ffcc44; color:#0a0f1e;">🛠️ Tools Used</span>
+          <span class="badge">KiCad</span>
+          <span class="badge">Multimeter</span>
+        </div>
+        <div class="image-slot">
+          <img src="9.jpeg" alt="Nova screenshot" style="width:250px; height:130px; object-fit:cover; border-radius:6px;">
+        </div>
+      </div>
+
+      <!-- Honeypot Orchestration card (improved problem/solution) -->
+      <div class="card">
+        <h3>🛡️ LLM-Augmented Honeypot Orchestration<br>[Ongoing]</h3>
+        <div class="card-sub">Ryu SDN, Cowrie, Redis, Qwen</div>
+        <p>As part of Projects in Technology [II] ,<br>our team currently developing a security prototype targeting a critical weakness:</p>
+        <p style="margin: 0.5rem 0; padding-left: 1rem; border-left: 3px solid #0aff9d;">“<b><i>isolated honeypots that cannot correlate attacks across different services or respond without human intervention.</b></i>”</p>
+        <p>Core limitations addressed:</p>
+        <ul style="font-size:0.55rem; margin-left:1rem; margin-bottom:0.5rem;">
+          <div class="card-sub">
+          <li>No memory across protocols – SSH, web, FTP logs stay separate.</li><br>
+          <li>Zero automation – every alert waits for a human analyst.</li><br>
+          <li>No intelligence sharing – a pattern on one service does not protect others.</li><br>
+          <li>Rigid rule sets – cannot interpret multi‑step attack chains.</li><br>
+          </div>
+        </ul>
+        <p>Our solution:</p>
+        <ul style="font-size:0.55rem; margin-left:1rem; margin-bottom:0.5rem;">
+          <div class="card-sub">
+          <li>Shared attack memory (Redis) – cross‑protocol event storage.</li><br>
+          <li>Semantic threat assessment – local LLM infers coordinated attacks.</li><br>
+          <li>Instant network enforcement (Ryu SDN) – blocks malicious IPs in 2 seconds.</li><br>
+          <li>Built on open tools – Cowrie, Ryu, Ollama, Redis; innovation is the orchestration layer.</li><br>
+          </div>
+        </ul>
+        <div class="badge-list" style="margin-top: 0.5rem;">
+          <span class="badge" style="background:#a855f7; border-color:#a855f7;">⚙️ MY ROLE</span>
+          <span class="badge">Optimize LLM</span>
+          <span class="badge">LLM Integration</span>
+          <span class="badge">Literature Review</span>
+        </div>
+        <div class="badge-list" style="margin-top:0.8rem;">
+          <span class="badge" style="background:#ffcc44; color:#0a0f1e;">🛠️ Tools Using</span>
+          <span class="badge">Ryu</span>
+          <span class="badge">Cowrie</span>
+          <span class="badge">Redis</span>
+          <span class="badge">Qwen 3</span>
+        </div>
+        <div class="image-slot">
+            <img src="7.jpeg" alt="Nova screenshot" style="width:250px; height:130px; object-fit:cover; border-radius:6px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="reveal">
+    <h2 class="section-title">🎮 SKILL TREE</h2>
+    <div class="skill-group"><h4>▸ LANGUAGES</h4><div class="skill-pills"><span class="pill">C/C++</span><span class="pill">Python</span><span class="pill">Java</span></div></div>
+    <div class="skill-group"><h4>▸ TOOLS & TECH</h4><div class="skill-pills"><span class="pill">Davinci Resolve</span><span class="pill">Cisco Packet Tracer</span><span class="pill">KiCad</span><span class="pill">Maya</span><span class="pill">Git/GitHub</span><span class="pill">Blender</span></div></div>
+    <div class="skill-group"><h4>▸ HARDWARE</h4><div class="skill-pills"><span class="pill">Circuit Design</span><span class="pill">Soldering</span><span class="pill">Arduino/ESP32</span><span class="pill">Sensors</span><span class="pill">Oscilloscope</span></div></div>
+  </section>
+
+
+
+  <!-- CLUBS -->
+  <section id="clubs" class="reveal">
+    <h2 class="section-title">👾 CLUBS & LEADERSHIP</h2>
+    <!--<div class="grid-cards">-->
+      <div class="card">
+        <h3>🐢 Turtle Rescue Project</h3>
+        <div class="card-sub">Rotaract Club | Panadura Beach | 2025</div>
+        <p>Joined a one‑day turtle rescue project organized by Rotaract club, University of Kelaniya. And Helped to rescue new born sea turtles and relase them to the sea. Also listened to a short awareness session about turle's marine life.</p>
+        <div class="badge-list">
+          <span class="badge">Volunteering</span>
+          <span class="badge">Environmental Awareness</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research" class="reveal">
+    <h2 class="section-title">📡 RESEARCH ENGAGEMENT</h2>
+    <h3 class="card">
+    <div class="card-sub">
+      Student Research Symposium  2025
+      </div>
+      <p>Organized by Faculty of Computing & Technology,University of Kelaniya.<br><br> Attended as a participant. I have watched our seniors present projects on various paths.<br><br> And learned how to done a research project step by step by participating for the event.</p>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certs" class="reveal">
+    <h2 class="section-title">📜 CERTIFICATIONS</h2>
+    <div class="card">
+      <h3>🐧 Netcad Linux Essentials</h3>
+      <div class="card-sub">Conducted by Netcad Academy | 2026 </div>
+      <p>I have Completed the Linux Essentials course covering: file system navigation, user permissions, shell scripting basics, process management, and network configuration.</p>
+      <p>And that course covered:</p>
+      <div class="card-sub"
+      <ul style="font-size:0.55rem; margin-left:1rem; margin-bottom:0.5rem;">
+        <li>File system hierarchy and navigation (ls, cd, mkdir, rm)</li><br>
+        <li>User permissions and ownership (chmod, chown, umask)</li><br>
+        <li>Shell scripting basics (variables, loops, conditionals)</li><br>
+        <li>Process management (ps, top, kill, background jobs)</li><br>
+        <li>Network configuration (ifconfig, ping, netstat, ssh)</li><br>
+        <li>Package management (apt, dpkg, repositories)</li><br>
+      </ul>
+      </div>
+      <div class="badge-list">
+        <span class="badge">Linux CLI</span>
+        <span class="badge">Bash Scripting</span>
+        <span class="badge">File Permissions</span>
+      </div>
+      <div class="image-slot">
+        <a href="N-557.pdf" target="_blank" style="display: inline-block; background: #0aff9d; color: #0a0f1e; padding: 0.3rem 0.8rem; text-decoration: none; font-size: 0.5rem; border-radius: 4px;">📄 View Certificate</a>
+      </div>
+    </div>
+    <br>
+    <div class="card">
+      <h3>🐳 Docker Workshop (Ongoing)</h3>
+      <div class="card-sub">Conduct by FOSS Community | University of Kelaniya | 2026</div>
+      <p>Currently I'm attending a hands‑on Docker workshop conducted by FOSS Community University of Kelaniya.<br><br>So far, I have Learned containerisation basics:</p>
+        <ul style="font-size:0.55rem; margin-left:1rem; margin-bottom:0.5rem;">
+      <div class="card-sub">
+        <li>Containers</li><br>
+        <li>docker files</li><br>
+        <li>docker-images</li><br>
+        <li>docker-compose</li><br>
+      </div>
+    </ul>
+      <div class="badge-list">
+        <span class="badge">Docker</span>
+        <span class="badge">Containers</span>
+        <span class="badge">CLI</span>
+      </div>
+      <p>And I'm willing to learn more about docker and receive a participation certificate after completion.</p>
+      
+      <div class="image-slot">
+        <img src="3.png" alt="Nova screenshot" style="width:400px; height:230px; object-fit:cover; border-radius:6px;">
+
+      </div>
+    </div>
+    
+  </section>
+      <!-- ========== ACHIEVEMENTS (personal & honest) ========== -->
+      <section id="achievements" class="reveal">
+        <h2 class="section-title">🏆PERSONAL ACHIEVEMENTS</h2>
+          <!-- 3D rig created in Blender -->
+          <div class="card">
+            <h3>🎨<strong>3D character rigs<br> (Blender – self learning)</strong></h3>
+            <div class="card-sub">Personal project</div>
+            <p>I followed Blender animation tutorials. And I modeled simple Rigs.So,I learned some tools like subdivision surface, geometry nodes, shading and basic rendering teqniques. These are my first 3D models designed using blender.</p>
+            <div class="badge-list">
+              <span class="badge">Blender</span>
+              <span class="badge">Rigging</span>
+              <span class="badge">Shading</span>
+            </div>
+            <div class="image-slot">
+                <img src="4.png" style="width:310px; height:170px;object-fit:cover; border-radius:6px;">
+              <img src="6.png" style="width:310px; height:170px;object-fit:cover; border-radius:6px;">
+              <img src="5.png" style="width:310px; height:170px;object-fit:cover; border-radius:6px;">
+            </div>
+          </div>
+          
+  </section>
+
+  <!-- REFLECTIONS -->
+  <section id="reflections" class="reveal">
+    <h2 class="section-title">💭 REFLECTIONS</h2>
+    <div class="card">
+      <h3><strong>🤖 Line-following Robot</strong></h3>
+      <p>As I said before, I really enjoy working in a team with my friends. While developing our robot, we had many different ideas about which type of elements we should use for the robots. We had a few disagreements, but at the end we learned to respect each other's opinions and vote on decisions.<br>And also dividing tasks made everything much easier.That's one of my learns from my group activities.<br><br>
+        We also faced various obstacles – some times it wroks ,some times it is not.In those situation we take some time and  we restarted the process until it works. That taught me<br><div class="card-sub"> "<strong>Don't give up until you complete the task correctly.</strong>"</div>
+        <p>Through this project, I improved my soft skills – listening to feedback, explaining my choices calmly, and encouraging teammates when they felt stuck.</p>
+    </div><br>
+      <div class="card">
+        <h3><strong>🕸️ SDN Based Honeypot(Ongoing)</strong></h3>
+        <div class="card-sub">
+        <p>This project is special for me. Because it's my first time working with LLM and network based devices. When we started this project, I had no idea what ryu,cowrie was. I spent more time following some tutorials and research papers to understand basic terms in networking.<br><br> So every step gave us headaches, but we didn't gave up we still wroking on our project with same energy. I learned to use Linux terminal, which I haven't use before. Even though the project isn't finished, But I feel confident working with those security tools.</p>
+        </div>
+      </div><br>
+
+    <div class="card">
+      <h3><strong>🎥 Photography & Animation</strong></h3>
+      <p>I enjoy taking photos and editing in my free time. I feel that, How to arrange lightning,compositions and colours into a single frame. These same skills I need for Game developing & Animations. When I record some movements in my surround. I understand how movement works.<br><div class="badge-list">
+      <span class="badge">how a tree reacts when wind goes through it</span></div></p><p>It teach me to make animation looks realstic.Further more I like to learn more about compositions and techniques in photography & videography as well.</p>
+    </div>
+  </section>
+
+  <!-- CAREER GOALS -->
+  <section id="goals" class="reveal">
+    <h2 class="section-title">🚀 FUTURE ROADMAP</h2>
+    <div class="grid-cards">
+      <div class="card"><h3>Short‑term (6-12 months)</h3><ul style="font-size:0.55rem; margin-left:1rem; margin-bottom:0.8rem;">
+        <li>Complete the Docker workshop conducted by FOSS community and get the certificate.</li><br>
+        <li>Complete our ongoing LLM‑augmented honeypot project and try to release a research paper.</li><br>
+        <li>Create a 1min 3D animation in Blender (behaviours of enviornment)</li><br>
+        <li>Participate in  online game jam or animation competitions.</li>
+      </ul>
+
+        <div class="badge-list">
+          <span class="badge">Docker</span>
+          <span class="badge">LLM</span>
+          <span class="badge">Blender</span>
+          <span class="badge">Autodesk MAYA</span>
+          </div>
+      </div>
+      <div class="card"><h3>Long‑term (1-3years)</h3><ul style="font-size:0.55rem; margin-left:1rem; margin-bottom:0.8rem;">
+        <li>Learn Unreal Engine and build a some 2D mini games.</li><br>
+        <li>Do some external courses on character rigging and advanced animations.</li><br>
+        <li>Learn more coding that combine with game logics.</li><br>
+        <li>Explore how AI can help for my work in game development & Animations.</li>
+      </ul>
+        <div class="badge-list">
+          <span class="badge">Unreal Engine</span>
+          <span class="badge">Level Desinging</span>
+          <span class="badge">Character Rigging</span>
+          <span class="badge">Collaborate AI & Games</span>
+        </div>
+
+      </div>
+      <div class="card"><h3>Skills to master</h3> <ul style="font-size:0.55rem; margin-left:1rem; margin-bottom:0.8rem;">
+        <li>I want to master every Blender skills in my future.</li><br>
+        <li>Explore more game engines and learn each one.</li><br>
+        <li>Create animations in various categories.</li><br>
+        <li>Learn more texturing and Character designs for animations.</li><br>
+      </ul>
+        <div class="badge-list">
+        <span class="badge">Blender</span>
+          <span class="badge">Unreal Engine</span>
+          <span class="badge">Unity</span>
+        <span class="badge">Texturing</span>
+      </div>
+      </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <h2 class="section-title">📡 CONTACT INFO</h2>
+    <div class="card" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+      <div>
+        <p>✉ yasirufernan23@gmail.com</p>
+        <p><a href="https://github.com/yasirufernan23-eng" target="blank">🧩 github.com/Yasiru Fernando</a></p>
+      </div>
+      <div style="font-size: 1.3rem;">🎮 🕹️ 🖥️</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 Yasiru Randima Sankalpa </p>
+  </footer>
+</main>
+
+<script>
+  // Typing animation
+  const phrases = ["8‑Bit Enthusiast", "Beginner 3D Animator", "Beginner Game Developer", "Storyteller"];
+  let idx = 0, j = 0, isDeleting = false;
+  const typedEl = document.getElementById("typedLine");
+  function typeEffect() {
+    const full = phrases[idx];
+    if (isDeleting) typedEl.innerText = full.substring(0, j-1);
+    else typedEl.innerText = full.substring(0, j+1);
+    if (!isDeleting && j === full.length) { isDeleting = true; setTimeout(typeEffect, 1500); return; }
+    if (isDeleting && j === 0) { isDeleting = false; idx = (idx+1)%phrases.length; setTimeout(typeEffect, 200); return; }
+    j = isDeleting ? j-1 : j+1;
+    setTimeout(typeEffect, isDeleting ? 60 : 100);
+  }
+  typeEffect();
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Mobile menu
+  const mobBtn = document.getElementById('mobileBtn');
+  const navList = document.getElementById('navList');
+  mobBtn.addEventListener('click', () => navList.classList.toggle('show'));
+  document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navList.classList.remove('show')));
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // ========== DARK MODE / BRIGHT MODE TOGGLE (with localStorage) ==========
+  const themeToggleBtn = document.getElementById('themeToggle');
+  const updateToggleIcon = () => {
+    const isBright = document.body.classList.contains('bright-mode');
+    themeToggleBtn.textContent = isBright ? '🌙' : '☀️';
+  };
+  
+  // load saved preference
+  const savedTheme = localStorage.getItem('portfolioTheme');
+  if (savedTheme === 'bright') {
+    document.body.classList.add('bright-mode');
+    updateToggleIcon();
+  } else if (savedTheme === 'dark') {
+    document.body.classList.remove('bright-mode');
+    updateToggleIcon();
+  } else {
+    // default: dark mode, icon sun (means switch to bright)
+    updateToggleIcon();
+  }
+
+  themeToggleBtn.addEventListener('click', () => {
+    if (document.body.classList.contains('bright-mode')) {
+      document.body.classList.remove('bright-mode');
+      localStorage.setItem('portfolioTheme', 'dark');
+    } else {
+      document.body.classList.add('bright-mode');
+      localStorage.setItem('portfolioTheme', 'bright');
+    }
+    updateToggleIcon();
+  });
+</script>
+</body>
+</html>
